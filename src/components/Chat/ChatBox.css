@@ -1,0 +1,9 @@
+.chat-box {
+  height: 100%;
+  grid-area: chat-box;
+  background-color: var(--light-grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}

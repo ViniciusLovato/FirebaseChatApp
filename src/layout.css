@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  color: var(--input-text-color);
+}
+
+:root {
+  --dark-grey: #343F4B;
+  --mid-grey: #F7F9FB;
+  --light-grey: #FDFDFE;
+  --input-grey: #F4F6F9;
+  --input-text-color: #47525E;
+  --white: #FFFFFF;
+}
+
+#root {
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-template-areas: 
+  "sidebar content"
+  "sidebar content"
+  "sidebar content"
+  "sidebar content"
+}

@@ -1,0 +1,6 @@
+.contact-list {
+  height: 100%;
+  grid-area: contact-list;
+  background-color: var(--mid-grey);
+
+}

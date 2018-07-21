@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-
-import withAuthorization from './withAuthorization';
-import AuthUserContext from './AuthUserContext';
-
-import ChatList from './ChatList';
+import './Home.css';
 
 
-import ChatService from '../services/ChatService';
+import withAuthorization from '../../authentication/withAuthorization';
+import AuthUserContext from '../../authentication/AuthUserContext';
+
+import ContactList from '../../components/ContactList/ContactList';
+import ChatBox from '../../components/Chat/ChatBox';
+import UserDetails from '../../components/UserDetails/UserDetails';
+
+import ChatService from '../../services/ChatService';
 
 class HomePage extends Component {
 
@@ -41,16 +44,13 @@ class HomePage extends Component {
     return (
       <AuthUserContext.Consumer>
         {authUser => 
-          <div>
-            <h1>HomePage</h1>
-            <ChatList value={this.state.chatList}/>
-            <p>The Home Page is accessible by every signed in user.</p>
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-            <button onClick={() => this.handleClick()}>Send Message</button>
+          <div className="home-wrapper">
+            <ContactList value={[{key:1, title: 'test1'}, {key:2, title: 'test2'}]}/>
+            <ChatBox/>
+            <UserDetails/>      
           </div>  
         }
     </AuthUserContext.Consumer>
-      
     );
   }
 }

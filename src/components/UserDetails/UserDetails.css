@@ -1,0 +1,6 @@
+.user-details {
+  height: 100%;
+  grid-area: user-details;
+  background-color: var(--light-blue);
+
+}

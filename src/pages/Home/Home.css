@@ -1,0 +1,8 @@
+.home-wrapper {
+  grid-area: content;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3fr 6fr 2fr;
+  grid-template-areas: 
+  "contact-list chat-box user-details"
+}
