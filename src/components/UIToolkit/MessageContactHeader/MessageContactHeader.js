@@ -3,8 +3,8 @@ import './MessageContactHeader.css';
 
 const MessageContactHeader = (props) => (
   <div className="message-contact-header-wrapper">
-     <span>Valerie Elash</span>
-     <span>Last seen 20 minutes ago</span>
+     <span className="message-contact-header-name">Vinicius Lovato</span>
+     <span className="message-contact-header-last-seen">Last seen 20 minutes ago</span>
   </div>
 );
 

@@ -1,21 +1,18 @@
-.message-input-wrapper {
-  margin: 20px; 
-}
 
-.message-input {   
+.search-field {   
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   background-color: var(--input-grey);
   width: calc(100% - 40px);
-  line-height: 55px;
+  line-height: 48px;
   border-radius: 4px;
   padding-left: 20px;
   padding-right: 20px;
+  margin: auto;
   color: var(--input-text-color);
   -webkit-box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
   box-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.05);
-  font-size: 18px;
 
 }

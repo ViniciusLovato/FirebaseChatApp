@@ -1,6 +1,37 @@
 .user-details {
-  height: 100%;
   grid-area: user-details;
   background-color: var(--light-blue);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px 2px 2px hsla(0, 0%, 85.9%, 0.1);
+}
+
+.user-details-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+}
+
+.user-details-panel {
+  margin: 20px;
+
+}
+
+.user-details-panel-name {
+  text-align: center;
+  font-size: 28px;
+  padding-top: 10px;
+}
+
+.user-details-panel-sub {
+  text-align: center;
+  font-size: 16px;
+  padding: 7.5px;
+  color: var(--light-input-text-color);
+}
+
+.user-details-media {
 
 }

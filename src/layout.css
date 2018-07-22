@@ -4,7 +4,9 @@ body {
   font-family: sans-serif;
   height: 100vh;
   color: var(--input-text-color);
+  font-family: 'Lato', sans-serif;
 }
+
 
 :root {
   --dark-grey: #343F4B;
@@ -12,7 +14,13 @@ body {
   --light-grey: #FDFDFE;
   --input-grey: #F4F6F9;
   --input-text-color: #47525E;
+  --light-input-text-color: rgba(71, 82, 94, 0.73);
+  
   --white: #FFFFFF;
+
+  --online: #77D353;
+  --offline: #C9CACC;
+  --away: #FFBA5C;
 }
 
 #root {

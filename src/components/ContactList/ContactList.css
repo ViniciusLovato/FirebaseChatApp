@@ -1,6 +1,11 @@
-.contact-list {
-  height: 100%;
+.contact-list-wrapper {
   grid-area: contact-list;
   background-color: var(--mid-grey);
+  padding: 20px;
+}
 
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

@@ -1,0 +1,27 @@
+.user-card-wrapper {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 25px; 
+}
+
+.user-card-pic {
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+.user-card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-card-details-name {
+  font-size: 19px;
+  padding-bottom: 2.5px;
+}
+
+.user-card-details-message {
+  font-size: 16px;
+  padding-top: 2.5px;
+  color: var(--light-input-text-color);
+}
