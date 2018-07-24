@@ -1,0 +1,13 @@
+.message-wrapper {
+  display: flex;
+  margin: 10px;
+}
+
+.end {
+  align-self: end;
+  flex-direction: row-reverse;
+}
+
+.start {
+  align-self: start;
+}

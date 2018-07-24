@@ -1,0 +1,13 @@
+.message-bubble-wrapper {
+    background-color: var(--white);
+    color: var(--light-input-text-color);
+
+    font-size: 14px;
+    border-radius: 7px;    
+    
+    padding: 13px 20px 13px 20px;
+    margin: 10px;
+
+    -webkit-box-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.05);
+    box-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.05);
+}

@@ -5,6 +5,7 @@ import MessageService from '../../services/MessageService';
 
 import MessageInput from '../UIToolkit/MessageInput/MessageInput';
 import MessageContactHeader from '../UIToolkit/MessageContactHeader/MessageContactHeader';
+import Message from '../UIToolkit/Message/Message';
 
 class ChatBox extends Component {
   state = { 
@@ -27,9 +28,13 @@ class ChatBox extends Component {
     return (
       <div className="chat-box">
         <MessageContactHeader/>
-        {this.state.messages.map((msg) => 
-          <span key={msg.key}>{msg.message}</span>
-        )}
+        {/* Change this to a component */}
+        <div className="temp-box">
+          {this.state.messages.map((msg) => {
+            let position = Math.round(Math.random()) === 1 ? 'end' : 'start';
+            return <Message key={msg.key} msg={msg} position={position}/>
+          })}
+        </div>
         <MessageInput handleSubmit={this.handleSubmit} />
       </div>
     );

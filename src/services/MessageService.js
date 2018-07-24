@@ -18,7 +18,8 @@ class MessageService {
 
   listen = (callback) => {
     database.ref(`${this.ref}/-LHQDF0DxtDr34djKroV`).on('value', function(snapshot){
-      callback(snapshotToArray(snapshot.val()))
+      let returnValue = snapshot.val();
+      returnValue ? callback(snapshotToArray(returnValue)) : callback([]);
     });
   }  
 }
