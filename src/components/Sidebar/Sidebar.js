@@ -1,6 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
-import SignOut from '../SignOut';
+import SignOut from '../UIToolkit/SignOut/SignOut';
 
 const Sidebar = () => (
   <div className="sidebar">

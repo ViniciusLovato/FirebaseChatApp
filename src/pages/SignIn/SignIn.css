@@ -1,0 +1,50 @@
+.sign-in-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--login-background);
+
+  width: 100%;
+  /* This timing applies on the way OUT */
+  transition: width  1s cubic-bezier(0,.99,.54,1) 0.5s, background-color 1s ease-in ;
+  /* Quick on the way out */
+}
+
+.sign-in-wrapper-enter {
+  width: var(--sidebar-size);
+  background-color: var(--dark-grey);
+}
+
+.sign-in-wrapper-enter div {
+  transition: visibility 0.4s, opacity 0.4s linear;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sign-in-button:hover {
+  color: var(--white);
+  border-bottom: 1px solid var(--white);
+}
+
+.sign-in-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  transition: border .25s ease-in, color 0.25s ease-in ;
+}
+
+.made-with-love {
+  position: absolute;
+  bottom: 15px;
+}
+
+.heart {
+  color: #ed4646;
+}
+
+

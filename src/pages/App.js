@@ -11,15 +11,16 @@ import withAuthentication from '../authentication/withAuthentication';
 import './App.css';
 
 import HomePage from './Home/Home';
-import SignIn from '../components/SignIn';
+import SignIn from './SignIn/SignIn';
 
 
 const App = () =>
   <Router>
-    <div className="wrapper">
-      <Route exact path={routes.HOME} component={() => <HomePage />} />
+    <React.Fragment>
       <Route exact path={routes.SIGN_IN} component={() => <SignIn />} />
-    </div>
+      <Route exact path={routes.HOME} component={() => <HomePage />} /> 
+    </React.Fragment>
   </Router>
+  
 
 export default withAuthentication(App);

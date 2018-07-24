@@ -46,14 +46,14 @@ class HomePage extends Component {
     return (
       <AuthUserContext.Consumer>
         {authUser => 
-          <React.Fragment>
+           <div className="wrapper">
             <Sidebar/>
-            <div className="home-wrapper">
+            <div className="content-wrapper">
               <ContactList value={[{key:1, title: 'test1'}, {key:2, title: 'test2'}]}/>
               <ChatBox currentChat={this.state.currentChat}/>
               <UserDetails/>      
             </div>  
-          </React.Fragment>
+          </div>  
         }
     </AuthUserContext.Consumer>
     );

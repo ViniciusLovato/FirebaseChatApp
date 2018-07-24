@@ -21,19 +21,13 @@ body {
   --online: #77D353;
   --offline: #C9CACC;
   --away: #FFBA5C;
+
+  --login-background: black;
+
+  --sidebar-size: 100px;
 }
 
 #root {
   height: 100%;
 }
 
-.wrapper {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 100px auto;
-  grid-template-areas: 
-  "sidebar content"
-  "sidebar content"
-  "sidebar content"
-  "sidebar content"
-}
