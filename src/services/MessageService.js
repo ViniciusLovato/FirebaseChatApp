@@ -1,31 +1,26 @@
 import { database } from '../firebase/firebase';
 import { snapshotToArray } from '../firebase/firebaseUtils';
 
-class ChatService {
+class MessageService {
   constructor() {
     this.ref = 'messages';
   }
 
-  create = (chat) => {
-
+  sendMessage = (message, chat, username) => {
+    const newMessageKey =  '-LHQDF0DxtDr34djKroV';
+    database.ref(`${this.ref}/${newMessageKey}`).push({
+      message: message,
+      username: username,
+      timestamp: new Date().getTime()
+    })
   }
 
-  edit = (chatID, chat) => {
-
-  }
-
-  delete = (chatID) => {
-   
-  }
-
-  findAll = () => {
-    return database.ref(this.ref).once('value').then(snapshot => {
-
-  }
 
   listen = (callback) => {
-
+    database.ref(`${this.ref}/-LHQDF0DxtDr34djKroV`).on('value', function(snapshot){
+      callback(snapshotToArray(snapshot.val()))
+    });
   }  
 }
 
-export default new ChatService();
+export default new MessageService();

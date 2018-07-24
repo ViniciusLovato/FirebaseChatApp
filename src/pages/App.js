@@ -10,14 +10,14 @@ import withAuthentication from '../authentication/withAuthentication';
 
 import './App.css';
 
-import Sidebar from '../components/Sidebar/Sidebar';
 import HomePage from './Home/Home';
+import SignIn from '../components/SignIn';
 
 const App = () =>
   <Router>
     <div className="wrapper">
-      <Sidebar/>
       <Route exact path={routes.HOME} component={() => <HomePage />} />
+      <Route exact path={routes.SIGN_IN} component={() => <SignIn />} />
     </div>
   </Router>
 
