@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import './SignIn.css';
 
 import { auth } from '../../firebase';
+import AuthUserContext from '../../authentication/AuthUserContext';
 import * as routes from '../../constants/routes';
 
 const SignInPage = ({ history }) => (
@@ -17,31 +18,36 @@ class SignInForm extends Component {
     this.state = {
       classes: ["sign-in-wrapper"]
     }
+  }
 
-    this.onSubmit = this.onSubmit.bind(this);
+  onTransitionEnd = (event) => {
+    if(event.propertyName === 'width'){
+      const { history } = this.props;
+      history.push(routes.HOME);  
+    }
   }
 
   onSubmit = (event) => {
     event.preventDefault();    
-    let classes = ["sign-in-wrapper", "sign-in-wrapper-enter"];
-    
-    const { history } = this.props;
-
-    // FIX THIS! :(
-    var self = this;
-    auth.GoogleSignIn().then((result) =>  {
-      self.setState({classes});    
-      
-      // history.push(routes.HOME);       
-      
-    })
+    auth.GoogleSignIn().then((result) =>  {console.log(result)})
     .catch(err => console.log('nope!'));
+  }
+
+  onEnter = (event) => {
+    event.preventDefault();
+    let classes = ["sign-in-wrapper", "sign-in-wrapper-enter"];
+    this.setState({classes});
   }
 
   render() {
     return (
-      <div className={this.state.classes.join(' ')}>
-        <div onClick={this.onSubmit} className="sign-in-button" value="Enter">Enter</div>
+      <div  onTransitionEnd={this.onTransitionEnd} className={this.state.classes.join(' ')}>
+        <AuthUserContext.Consumer>
+          {authUser => authUser ?  
+             <div onClick={this.onEnter} className="sign-in-button" value="Enter">Hello, {authUser.displayName}</div> : 
+             <div onClick={this.onSubmit} className="sign-in-button" value="Enter">Hello, Stranger</div>
+          }
+        </AuthUserContext.Consumer>
         <div className="made-with-love">Made with <span className="heart">❤</span> in Brazil</div>   
       </div>    
     )

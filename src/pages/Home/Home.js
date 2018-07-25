@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { CSSTransitionGroup } from 'react-transition-group' // ES6
+
 import './Home.css';
 
 
@@ -44,18 +46,25 @@ class HomePage extends Component {
 
   render = () => {
     return (
-      <AuthUserContext.Consumer>
-        {authUser => 
-           <div className="wrapper">
-            <Sidebar/>
-            <div className="content-wrapper">
-              <ContactList value={[{key:1, title: 'test1'}, {key:2, title: 'test2'}]}/>
-              <ChatBox currentChat={this.state.currentChat}/>
-              <UserDetails/>      
+        <AuthUserContext.Consumer>
+          {authUser => 
+            <div className="wrapper">
+              <Sidebar/>
+              <CSSTransitionGroup
+                transitionName="example"
+                transitionAppear={true}
+                transitionAppearTimeout={500}
+                transitionEnter={false}
+                transitionLeave={false}
+                component="div" className="content-wrapper">
+                  <ContactList value={[{key:1, title: 'test1'}, {key:2, title: 'test2'}]}/>
+                  <ChatBox currentChat={this.state.currentChat}/>
+                  <UserDetails/>      
+                
+              </CSSTransitionGroup>
             </div>  
-          </div>  
-        }
-    </AuthUserContext.Consumer>
+          }
+        </AuthUserContext.Consumer>
     );
   }
 }
