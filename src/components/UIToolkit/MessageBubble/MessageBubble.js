@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './MessageBubble.css';
 
 const MessageBubble = (props) => (
@@ -6,5 +8,9 @@ const MessageBubble = (props) => (
    {props.children}
   </div>
 );
+
+MessageBubble.propTypes = {
+  children: PropTypes.any.isRequired
+}
 
 export default MessageBubble;

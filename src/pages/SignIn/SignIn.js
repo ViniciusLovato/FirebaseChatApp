@@ -5,6 +5,7 @@ import './SignIn.css';
 
 import { auth } from '../../firebase';
 import AuthUserContext from '../../authentication/AuthUserContext';
+import UserService from '../../services/UserService';
 import * as routes from '../../constants/routes';
 
 const SignInPage = ({ history }) => (
@@ -20,6 +21,10 @@ class SignInForm extends Component {
     }
   }
 
+  onRegister = (user) => {
+    UserService.register(user);
+  }
+
   onTransitionEnd = (event) => {
     if(event.propertyName === 'width'){
       const { history } = this.props;
@@ -29,8 +34,10 @@ class SignInForm extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();    
-    auth.GoogleSignIn().then((result) =>  {console.log(result)})
-    .catch(err => console.log('nope!'));
+    auth.GoogleSignIn().then((result) =>  {
+      this.onRegister(result.user);
+    })
+    .catch(err => console.log(err));
   }
 
   onEnter = (event) => {
@@ -40,8 +47,10 @@ class SignInForm extends Component {
   }
 
   render() {
+    let classes = this.state.classes.join(' ');
+
     return (
-      <div  onTransitionEnd={this.onTransitionEnd} className={this.state.classes.join(' ')}>
+      <div  onTransitionEnd={this.onTransitionEnd} className={classes}>
         <AuthUserContext.Consumer>
           {authUser => authUser ?  
              <div onClick={this.onEnter} className="sign-in-button" value="Enter">Hello, {authUser.displayName}</div> : 

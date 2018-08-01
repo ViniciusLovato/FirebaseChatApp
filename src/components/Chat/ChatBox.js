@@ -27,7 +27,7 @@ class ChatBox extends Component {
   render() {
     return (
       <div className="chat-box">
-        <MessageContactHeader/>
+        <MessageContactHeader name="Vinicius Lovato" lastSeen={20}/>
         {/* Change this to a component */}
         <div className="temp-box">
           {this.state.messages.map((msg) => {

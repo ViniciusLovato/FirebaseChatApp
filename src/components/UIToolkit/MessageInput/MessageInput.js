@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './MessageInput.css';
 
 class MessageInput extends Component {
@@ -30,5 +31,8 @@ class MessageInput extends Component {
   }
 }
 
+MessageInput.propTypes = {
+  handleSubmit: PropTypes.func.isRequired
+}
 
 export default MessageInput;

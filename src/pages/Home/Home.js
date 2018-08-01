@@ -38,7 +38,7 @@ class HomePage extends Component {
     this.setState({value: event.target.value});
   }
 
-  componentDidMount = () => {
+  componentDidMount = () => { 
     ChatService.listen((chatList) => {
       this.setState({ chatList });
     });
@@ -57,7 +57,7 @@ class HomePage extends Component {
                 transitionEnter={false}
                 transitionLeave={false}
                 component="div" className="content-wrapper">
-                  <ContactList value={[{key:1, title: 'test1'}, {key:2, title: 'test2'}]}/>
+                  <ContactList contactList={[{key:1, title: 'test1'}, {key:2, title: 'test2'}]}/>
                   <ChatBox currentChat={this.state.currentChat}/>
                   <UserDetails/>      
                 

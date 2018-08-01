@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ContactList.css';
 
 import AuthUserContext from '../../authentication/AuthUserContext';
@@ -14,14 +15,17 @@ const ContactList = (props) => (
     </AuthUserContext.Consumer>
     <SearchField/>
     <ul className="contact-list">
-      {props.value.map(val => 
+      {props.contactList.map(val => 
         <li key={val.key}>
           <UserCard/>
         </li>
       )}
     </ul>
-  </div>
-  
+  </div> 
 )
+
+ContactList.propTypes = {
+  contactList: PropTypes.array.isRequired
+}
 
 export default ContactList;
