@@ -15,9 +15,9 @@ const ContactList = (props) => (
     </AuthUserContext.Consumer>
     <SearchField/>
     <ul className="contact-list">
-      {props.contactList.map(val => 
-        <li key={val.key}>
-          <UserCard/>
+      {props.contactList.map(user => 
+        <li key={user.key}>
+          <UserCard displayName={user.displayName} photoURL={user.photoURL}/>
         </li>
       )}
     </ul>

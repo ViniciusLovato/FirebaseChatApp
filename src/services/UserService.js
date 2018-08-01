@@ -22,6 +22,12 @@ class UserService {
       return snapshotToArray(snapshot.val());
     })
   }
+
+  listen = (callback) => {
+    database.ref(this.ref).on('value', function(snapshot){
+      callback(snapshotToArray(snapshot.val()))
+    });
+  }  
 }
 
 export default new UserService();

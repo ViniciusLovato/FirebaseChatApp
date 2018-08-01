@@ -11,7 +11,12 @@ import ContactList from '../../components/ContactList/ContactList';
 import ChatBox from '../../components/Chat/ChatBox';
 import UserDetails from '../../components/UserDetails/UserDetails';
 
+import Tabs from '../../components/UIToolkit/Tabs/Tabs';
+import Tab from '../../components/UIToolkit/Tabs/Tab';
+
 import ChatService from '../../services/ChatService';
+import UserService from '../../services/UserService';
+
 import Sidebar from '../../components/Sidebar/Sidebar';
 
 class HomePage extends Component {
@@ -20,6 +25,7 @@ class HomePage extends Component {
     super(props);
     this.state = {
       chatList: [],
+      contactList: [],
       currentChat: '-LHQDF0DxtDr34djKroV',
       value: ''
     }
@@ -42,9 +48,14 @@ class HomePage extends Component {
     ChatService.listen((chatList) => {
       this.setState({ chatList });
     });
+    UserService.listen((contactList) => {
+      this.setState({ contactList });
+    })
   }
 
   render = () => {
+    let { currentChat, contactList } = this.state;
+
     return (
         <AuthUserContext.Consumer>
           {authUser => 
@@ -57,9 +68,17 @@ class HomePage extends Component {
                 transitionEnter={false}
                 transitionLeave={false}
                 component="div" className="content-wrapper">
-                  <ContactList contactList={[{key:1, title: 'test1'}, {key:2, title: 'test2'}]}/>
-                  <ChatBox currentChat={this.state.currentChat}/>
-                  <UserDetails/>      
+              <Tabs>
+                  <Tab title="content 0">
+                      <p>content 0</p>
+                  </Tab>
+                  <Tab title="content 1">
+                      <p>content 1</p>
+                  </Tab>
+              </Tabs>
+{/*                   <ContactList contactList={contactList}/>
+                  <ChatBox currentChat={currentChat}/>
+                  <UserDetails/>       */}
                 
               </CSSTransitionGroup>
             </div>  
