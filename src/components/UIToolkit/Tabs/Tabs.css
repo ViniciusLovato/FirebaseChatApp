@@ -1,0 +1,17 @@
+.tabs-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs-navigation {
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.tabs-active-content {
+  height: 100%;
+}

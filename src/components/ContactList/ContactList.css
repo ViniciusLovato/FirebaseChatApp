@@ -1,5 +1,4 @@
 .contact-list-wrapper {
-  grid-area: contact-list;
   background-color: var(--mid-grey);
   padding: 20px;
 }

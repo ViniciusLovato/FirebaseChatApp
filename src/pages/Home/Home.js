@@ -7,12 +7,9 @@ import './Home.css';
 import withAuthorization from '../../authentication/withAuthorization';
 import AuthUserContext from '../../authentication/AuthUserContext';
 
-import ContactList from '../../components/ContactList/ContactList';
 import ChatBox from '../../components/Chat/ChatBox';
 import UserDetails from '../../components/UserDetails/UserDetails';
-
-import Tabs from '../../components/UIToolkit/Tabs/Tabs';
-import Tab from '../../components/UIToolkit/Tabs/Tab';
+import Lists from '../../components/Lists/Lists';
 
 import ChatService from '../../services/ChatService';
 import UserService from '../../services/UserService';
@@ -68,17 +65,9 @@ class HomePage extends Component {
                 transitionEnter={false}
                 transitionLeave={false}
                 component="div" className="content-wrapper">
-              <Tabs>
-                  <Tab title="content 0">
-                      <p>content 0</p>
-                  </Tab>
-                  <Tab title="content 1">
-                      <p>content 1</p>
-                  </Tab>
-              </Tabs>
-{/*                   <ContactList contactList={contactList}/>
-                  <ChatBox currentChat={currentChat}/>
-                  <UserDetails/>       */}
+                <Lists contactList={contactList}/>
+                <ChatBox currentChat={currentChat}/>
+                <UserDetails/> 
                 
               </CSSTransitionGroup>
             </div>  

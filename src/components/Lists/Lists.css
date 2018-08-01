@@ -1,0 +1,5 @@
+.lists-wrapper {
+  grid-area: lists;
+  background-color: var(--mid-grey);
+  padding: 20px;
+}

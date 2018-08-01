@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './Tabs.css';
+
 class Tabs extends Component {
   static defaultProps = {
     activeTab: 0
