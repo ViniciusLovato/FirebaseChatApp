@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransitionGroup } from 'react-transition-group' // ES6
 import PropTypes from 'prop-types';
 
 import './Tabs.css';
@@ -48,7 +49,7 @@ class Tabs extends Component {
               {this.renderChildren()}
           </ul>
           <div className="tabs-active-content">
-              {this.renderActiveTabContent()}
+            {this.renderActiveTabContent()}
           </div>
       </div>
     );
